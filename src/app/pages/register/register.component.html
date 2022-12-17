@@ -1,0 +1,49 @@
+<div class="flex align-items-center justify-content-center lg:px-8 md:px-6 px-4 py-8 surface-ground">
+    <div class="p-6 shadow-2 lg:w-4 surface-card">
+        <div class="text-center">
+            <div class="font-bold text-5xl text-yellow-500">Kayıt Ol</div>
+            <div class="mt-4">
+                <span>Zaten bir hesabın var mı?</span>
+                <a routerLink="/login" class="no-underline ml-2 text-blue-500 cursor-pointer text-xl">Giriş Yap!</a>
+            </div>
+        </div>
+        <div>
+            <form action="">
+                <div class="flex align-items-center justify-content-between">
+                    <span class="p-float-label mt-5">
+                        <input id="name" pInputText type="text" class="w-13rem" required>
+                        <label for="name">Ad</label>
+                    </span>
+
+                    <span class="p-float-label mt-5">
+                        <input id="surname" pInputText type="text" class="w-14rem" required>
+                        <label for="surname">Soyad</label>
+                    </span>
+                </div>
+                <span class="p-float-label mt-5">
+                    <input id="email" pInputText type="email" class="w-full" name="email" [ngModel]="email" email required>
+                    <label for="email">Email</label>
+                </span>
+
+                <span class="p-float-label mt-5">
+                    <input id="username" pInputText type="text" name="username" ngModel #username="ngModel" required minlength="5"
+                        class="w-full">
+                    <label for="username">Kullanıcı Adı</label>
+                </span>
+
+                <span class="p-float-label my-5 w-full">
+                    <p-password id="password" [toggleMask]="true" [style]="{'width':'100%'}"
+                        [inputStyle]="{'width':'100%'}" required></p-password>
+                    <label for="password">Şifre</label>
+                </span>
+
+                <!-- <span class="p-float-label my-5 w-full">
+                <p-password id="passwordRepeat" [feedback]="false" [toggleMask]="true" [style]="{'width':'100%'}"
+                    [inputStyle]="{'width':'100%'}"></p-password>
+                <label for="passwordRepeat">Şifre Tekrar</label>
+            </span> -->
+            </form>
+            <button pButton icon="pi pi-user-plus" label="Kayıt Ol" class="w-full mt-2" (click)="register()"></button>
+        </div>
+    </div>
+</div>

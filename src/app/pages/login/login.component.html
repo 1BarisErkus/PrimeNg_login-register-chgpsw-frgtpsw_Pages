@@ -1,0 +1,40 @@
+<div class="box relative overflow-hidden border-round-lg top-50 left-50">
+    <div class="form absolute border-round-lg z-5 p-4">
+        <div class="text-center">
+            <img src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/logos/hyper.svg"
+                alt="VardabitLogo">
+            <div class="text-4xl font-bold my-3">Vardabit <span class="text-yellow-500">Software</span></div>
+            <div>
+                <span>Bir hesabın yok mu?</span>
+                <a routerLink="/register" class="no-underline ml-2 text-blue-500 cursor-pointer text-xl">Kayıt Ol!</a>
+            </div>
+        </div>
+        <div>
+            <form action="">
+                <span class="p-float-label mt-5">
+                    <input id="username" pInputText type="text" class="w-full" name="username" ngModel
+                        #username="ngModel" required minlength="5">
+                    <label for="username">Kullanıcı Adı</label>
+                </span>
+
+                <span class="p-float-label mt-5">
+                    <p-password id="password" [toggleMask]="true" [feedback]="false" type="password" class="w-full"
+                        required [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}"></p-password>
+                    <label for="password">Şifre</label>
+                </span>
+
+                <div class="mt-5 mb-5 flex justify-content-between">
+                    <div class="checkbox">
+                        <p-checkbox class="mr-2" value="valCheckbox" inputId="forgotMe"></p-checkbox>
+                        <label for="forgotMe">Beni hatırla!</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a routerLink="/forgot-password" class="no-underline text-blue-500 cursor-pointer">Şifremi
+                            Unuttum?</a>
+                    </div>
+                </div>
+            </form>
+            <button pButton icon="pi pi-user" label="Giriş Yap" class="w-full" (click)="loginControl()"></button>
+        </div>
+    </div>
+</div>
